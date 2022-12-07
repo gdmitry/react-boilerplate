@@ -8,10 +8,12 @@
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "test": "playwright test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prettier:check": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Dmytro Honcharenko",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -24,6 +26,8 @@
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/webpack": "^6.5.1",
+    "@types/node-sass": "^4.11.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "babel-loader": "^8.2.5",
@@ -32,6 +36,8 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "node-sass": "^7.0.3",
+    "prettier": "2.7.1",
+    "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.1",
@@ -46,5 +52,18 @@
     "react-dom": "^16.10.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
+  },
+  "bin": {
+    "create-my-boilerplate": "./generate-app.js"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=14.17.5",
+    "npm": ">=7.14.0"
   }
 }

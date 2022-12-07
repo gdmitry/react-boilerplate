@@ -1,0 +1,7 @@
+# Ignore artifacts:
+dist
+coverage
+types
+playwright-report
+.storybook
+package-lock.json

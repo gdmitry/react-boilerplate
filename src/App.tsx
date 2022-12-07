@@ -1,11 +1,8 @@
-import React from 'react'
-import CreditCardForm from "./components/CreditCardForm/CreditCardForm";
+import React from 'react';
+import { CreditCardForm } from './components/CreditCardForm';
 
 function App() {
-    return <>
-        <h1>Hello!</h1>
-        <CreditCardForm />
-        </>
+  return <CreditCardForm />;
 }
 
-export default App
+export default App;

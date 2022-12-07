@@ -1,23 +1,61 @@
-import React, {FormEvent, useRef} from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
+import CCIcon from './ccicon.svg';
+import styles from './CreditCardForm.scss';
 
-function CreditCardForm() {
-    const numberInputRef = useRef();
-    const nameInputRef = useRef();
-    const expirationInputRef = useRef();
+const CardIcons = {};
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-        const cardNumber = numberInputRef?.current?.value
-        const holderName = nameInputRef?.current?.value
-        const expiration = expirationInputRef?.current?.value
-        console.log(cardNumber, holderName, expiration)
-    }
+export function CreditCardForm() {
+  // Main idea: Do not store values in state. As no need to have any validations or smth.
+  const numberInputRef = useRef(null);
+  const nameInputRef = useRef(null);
+  const expirationInputRef = useRef(null);
+  const securityCodeInputRef = useRef(null);
 
-    return <form onSubmit={handleSubmit}>
-        <input ref={numberInputRef} />
-        <input ref={nameInputRef} />
-        <input ref={expirationInputRef} />
-    </form>;
+  const [name, setName] = useState('');
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    // Get text input values
+    const cardNumber = numberInputRef.current?.value;
+    const holderName = nameInputRef.current?.value;
+    const expiration = expirationInputRef.current?.value;
+    const securityCode = securityCodeInputRef.current?.value;
+
+    setName(holderName);
+    console.log(cardNumber, holderName, expiration, securityCode);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1 className={styles['form-title']}>Payment information </h1>
+      <div className={styles['form-container']}>
+        <div className={styles['field-container']}>
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" maxLength={20} ref={nameInputRef} />
+        </div>
+        <div className={styles['field-container']}>
+          <label htmlFor="cardnumber">Card Number</label>
+          <input id="cardnumber" type="text" pattern="[0-9]*" inputMode="numeric" ref={numberInputRef} />
+          <CCIcon className={styles.ccicon} />
+        </div>
+        <div className={styles['field-container']}>
+          <label htmlFor="expirationdate">Expiration (mm/yy)</label>
+          <input id="expirationdate" type="text" pattern="[0-9]*" inputMode="numeric" ref={expirationInputRef} />
+        </div>
+        <div className={styles['field-container']}>
+          <label htmlFor="securitycode">Security Code</label>
+          <input
+            id="securitycode"
+            type="text"
+            pattern="[0-9]*"
+            maxLength={4}
+            minLength={4}
+            inputMode="numeric"
+            ref={securityCodeInputRef}
+          />
+        </div>
+      </div>
+      <button>Click!</button>
+    </form>
+  );
 }
-
-export default CreditCardForm;
