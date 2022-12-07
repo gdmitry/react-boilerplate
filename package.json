@@ -54,7 +54,7 @@
     "react-router-dom": "^5.2.0"
   },
   "bin": {
-    "create-my-boilerplate": "./generate-app.js"
+    "create-my-boilerplate": "./create-app.js"
   },
   "browserslist": [
     ">0.2%",
