@@ -11,12 +11,10 @@ if (process.argv.length < 3) {
   process.exit(1);
 }
 
-process.exit(1);
-
 const projectName = process.argv[2];
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
-const git_repo = YOUR_GIT_URL;
+const git_repo = 'https://github.com/gdmitry/react-boilerplate';
 
 try {
   fs.mkdirSync(projectPath);
@@ -41,7 +39,7 @@ async function main() {
 
     console.log('Removing useless files');
     execSync('npx rimraf ./.git');
-    fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+    fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
 
     console.log('The installation is done, this is ready to use !');
   } catch (error) {
