@@ -1,8 +1,8 @@
 import React from 'react';
-import { CreditCardForm } from './components/CreditCardForm';
+import { Input } from './components/Input';
 
 function App() {
-  return <CreditCardForm />;
+  return <Input />;
 }
 
 export default App;

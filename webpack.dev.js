@@ -4,9 +4,6 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'source-map',
-  // devServer: {
-  //     static: './dist'
-  // }
   module: {
     rules: [
       {
@@ -25,13 +22,13 @@ module.exports = merge(common, {
       {
         test: /\.css$/,
         use: [
-          'style-loader', // Creates `style` nodes from JS strings
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
               modules: true,
             },
-          }, // Translates CSS into CommonJS
+          },
         ],
       },
     ],

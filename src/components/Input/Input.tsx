@@ -19,11 +19,11 @@ export function Input({ className, name, id, dataTestId, maxLength, onChange }: 
 }
 
 export interface IProps {
-  onChange: (v: String) => {};
-  dataTestId: string;
-  className: string;
-  name: string;
-  id: string;
-  maxLength: number;
+  onChange?: (v: String) => {};
+  dataTestId?: string;
+  className?: string;
+  name?: string;
+  id?: string;
+  maxLength?: number;
   // ref: object; // Consider cases when it can be used
 }
