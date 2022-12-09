@@ -1,0 +1,114 @@
+.fieldContainer {
+  position: relative;
+}
+
+.formTitle {
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+
+input {
+  margin-top: 3px;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+form {
+  padding: 20px;
+}
+
+.fieldContainer input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.formContainer .fieldContainer:first-of-type {
+  grid-area: name;
+}
+
+.formContainer .fieldContainer:nth-of-type(2) {
+  grid-area: number;
+}
+
+.formContainer .fieldContainer:nth-of-type(3) {
+  grid-area: expiration;
+}
+
+.formContainer .fieldContainer:nth-of-type(4) {
+  grid-area: security;
+}
+
+.formContainer {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 90px 90px 90px;
+  grid-template-areas: 'name name' 'number number' 'expiration security';
+  max-width: 400px;
+  //padding: 20px;
+  color: #707070;
+}
+
+label {
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+
+input {
+  margin-top: 3px;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+.ccicon {
+  height: 38px;
+  position: absolute;
+  right: 6px;
+  top: calc(50% - 17px);
+  width: 60px;
+}
+
+.submitBtn {
+  padding: 0.8rem 1.35rem;
+  font-size: 1.125rem;
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+  background-color: #28a745;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #28a745;
+  //padding: 0.375rem 0.75rem;
+  //font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.submitBtn:not(:disabled):active {
+  color: #fff;
+  background-color: #1e7e34;
+  border-color: #1c7430;
+}
+
+.submitBtn:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
