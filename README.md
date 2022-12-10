@@ -1,4 +1,4 @@
-##React boilerplate
+## React boilerplate
 
 Custom template for React/TS project
 
