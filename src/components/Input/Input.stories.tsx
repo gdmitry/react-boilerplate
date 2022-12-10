@@ -1,14 +1,14 @@
 import React from 'react';
 
-import App from './App';
+import { Input } from './Input';
 
 export default {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'App',
-  component: App,
+  title: 'Input',
+  component: Input,
 };
 
-export const Main = () => <App />;
+export const Main = () => <Input />;
